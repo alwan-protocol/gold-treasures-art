@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كنوز الذهب - عبد الوهاب أحمد علوان | Gold Treasures</title>
+    <style>
+        body { background-color: #000; color: #d4af37; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 50px auto; border: 2px solid #d4af37; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        h1 { font-size: 2.2rem; margin-bottom: 5px; }
+        h2 { font-size: 1.5rem; margin-bottom: 25px; font-weight: normal; letter-spacing: 2px; }
+        p.ar-text { font-size: 1.2rem; margin-bottom: 5px; direction: rtl; }
+        p.en-text { font-size: 1rem; margin-bottom: 25px; direction: ltr; }
+        .btn-group { margin-top: 20px; }
+        .btn { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); border: none; padding: 15px 30px; margin: 10px; cursor: pointer; font-weight: bold; border-radius: 5px; color: #000; width: 80%; max-width: 250px; font-size: 1rem; transition: transform 0.2s; }
+        .btn:hover { transform: scale(1.05); }
+        #player-box { margin-top: 40px; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>كنوز الذهب</h1>
+    <h2>Gold Treasures</h2>
+    
+    <p class="ar-text">اختر اللغة للاستماع إلى الرواية الفلسفية للوحة</p>
+    <p class="en-text">Choose the language to listen to the philosophical story of the artwork</p>
+    
+    <div class="btn-group">
+        <button class="btn" onclick="playAudio('arabic')">الاستماع بالعربية</button>
+        <button class="btn" onclick="playAudio('english')">Listen in English</button>
+    </div>
+
+    <div id="player-box">
+        <iframe id="soundcloud-player" width="100%" height="166" scrolling="no" frameborder="no" src=""></iframe>
+    </div>
+</div>
+
+<script>
+    // الروابط المحدثة والخاصة بك بالكامل هنا
+    var arabicUrl = "https://soundcloud.com/abd-alwan-822063949/aa-001?si=61e2d89d50dc444fb393e584916cca3b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
+    var englishUrl = "https://soundcloud.com/abd-alwan-822063949/aa-001-1?si=97431c192ebd4fad919ff617cc67c52c&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
+
+    function playAudio(lang) {
+        var player = document.getElementById('soundcloud-player');
+        document.getElementById('player-box').style.display = 'block';
+        
+        var targetUrl = (lang === 'arabic') ? arabicUrl : englishUrl;
+        
+        // تشفير آمن للرابط لضمان عمله داخل المشغل المدمج باللون الذهبي وتشغيل تلقائي
+        player.src = "https://w.soundcloud.com/player/?url=" + encodeURIComponent(targetUrl) + "&color=%23d4af37&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false";
+    }
+</script>
+
+</body>
+</html>
