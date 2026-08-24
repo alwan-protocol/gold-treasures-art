@@ -3,55 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كنوز الذهب - عبد الوهاب أحمد علوان | Gold Treasures</title>
+    <title>كنوز الذهب | Gold Treasures</title>
     <style>
-        body { background-color: #000; color: #d4af37; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: 40px auto; border: 2px solid #d4af37; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-        h1 { font-size: 2.2rem; margin-bottom: 5px; }
-        h2 { font-size: 1.4rem; margin-bottom: 15px; font-weight: normal; letter-spacing: 1px; }
-        .serial-badge { display: inline-block; font-family: monospace; border: 1px dashed #d4af37; padding: 4px 12px; border-radius: 5px; font-size: 0.9rem; margin-bottom: 20px; color: #fcf6ba; }
-        p.ar-text { font-size: 1.1rem; margin-bottom: 5px; direction: rtl; }
-        p.en-text { font-size: 0.95rem; margin-bottom: 25px; direction: ltr; color: #bbb; }
-        .btn-group { margin-top: 20px; }
-        .btn { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); border: none; padding: 15px 30px; margin: 10px; cursor: pointer; font-weight: bold; border-radius: 5px; color: #000; width: 80%; max-width: 250px; font-size: 1rem; transition: transform 0.2s; }
-        .btn:hover { transform: scale(1.05); }
+        body { background-color: #000; color: #d4af37; font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; padding: 40px 20px; }
+        .container { max-width: 500px; margin: auto; border: 2px solid #d4af37; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(212,175,55,0.2); }
+        h1 { font-size: 1.8rem; margin-bottom: 10px; }
+        .serial { color: #888; font-size: 0.9rem; margin-bottom: 25px; }
+        audio { width: 100%; margin-top: 20px; outline: none; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>كنوز الذهب</h1>
-    <h2>Gold Treasures</h2>
-    <div class="serial-badge">SERIAL: AGP-2026-001</div>
-    
-    <p class="ar-text">اختر اللغة للاستماع إلى الرواية الفلسفية للوحة</p>
-    <p class="en-text">Choose the language to listen to the philosophical story of the artwork</p>
-    
-    <div class="btn-group">
-        <button class="btn" onclick="playAudio('arabic')">الاستماع بالعربية</button>
-        <button class="btn" onclick="playAudio('english')">Listen in English</button>
-    </div>
-
-    
-    <div id="player-box" style="display:none; margin-top: 30px;">
-        <audio id="direct-audio-player" controls style="width: 100%; accent-color: #d4af37;">
+    <div class="container">
+        <h1>كنوز الذهب | Gold Treasures</h1>
+        <div class="serial">Serial: AGP-2026-001</div>
+        <p>المقطع الصوتي الرسمي للوحة الفنية</p>
+        <audio controls autoplay controlsList="nodownload">
             <source src="AGP-2026-001.mp3" type="audio/mpeg">
-            متصفحك لا يدعم مشغل الصوت.
+            متصفحك لا يدعم تشغيل المقطع الصوتي.
         </audio>
     </div>
-    
-</div>
-
-<script>
-    
-    function playAudio(lang) {
-        var playerBox = document.getElementById('player-box');
-        var directAudio = document.getElementById('direct-audio-player');
-        playerBox.style.display = 'block';
-        directAudio.play();
-    }
-    
-</script>
-
 </body>
 </html>
