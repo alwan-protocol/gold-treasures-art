@@ -48,7 +48,7 @@
 </div>
 
 <script>
-    // جلب الرمز التسلسلي تلقائياً من الرابط (الافتراضي AGP-2026-001)
+    // جلب الرمز التسلسلي تلقائياً من الرابط
     const urlParams = new URLSearchParams(window.location.search);
     const serialNumber = urlParams.get('serial') || 'AGP-2026-001';
 
@@ -61,7 +61,6 @@
             arabic: "https://soundcloud.com/abd-alwan-822063949/aa-001?si=61e2d89d50dc444fb393e584916cca3b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
             english: "https://soundcloud.com/abd-alwan-822063949/aa-001-1?si=97431c192ebd4fad919ff617cc67c52c&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
         }
-        // يمكنك إضافة أي رموز قديمة أخرى هنا بنفس الطريقة مستقبلاً إذا احتجت
     };
 
     function playAudio(lang) {
@@ -70,16 +69,14 @@
         const scPlayer = document.getElementById('soundcloud-player');
         const directPlayer = document.getElementById('direct-audio-player');
 
-        // التحقق مما إذا كان الرمز ينتمي للأرشيف القديم
         if (legacyArtworks[serialNumber]) {
             directBox.style.display = 'none';
             soundcloudBox.style.display = 'block';
 
-            const targetUrl = (lang === 'arabic') ? legacyArtworks[serialNumber].arabic : legacyArtworks[serialNumber].english;
-            scPlayer.src = "https://w.soundcloud.com/player/?url=" + encodeURIComponent(targetUrl) + "&color=%23d4af37&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false";
+            const actualTarget = (lang === 'arabic') ? legacyArtworks[serialNumber].arabic : legacyArtworks[serialNumber].english;
+            scPlayer.src = "https://w.soundcloud.com/player/?url=" + encodeURIComponent(actualTarget) + "&color=%23d4af37&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false";
         } 
         else {
-            // النظام الجديد التلقائي (Hugging Face Protocol) للوحات الحديثة
             soundcloudBox.style.display = 'none';
             directBox.style.display = 'block';
 
